@@ -1,5 +1,5 @@
-FROM pascalgrimaud/ubuntu
-MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
+FROM authentise/base:6
+MAINTAINER Eli Ribble <eli@authentise.com>
 
 # update
 RUN apt-get -y update
@@ -7,9 +7,9 @@ RUN apt-get -y update
 # install utilities
 RUN apt-get -y install wget
 
-# installation : java7
-RUN apt-get install -y openjdk-7-jre
-ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+# installation : java JDF
+RUN apt-get install -y default-jdk
+ENV JAVA_HOME /usr/lib/jvm/default-java
 
 # install jboss
 RUN wget -O /tmp/jboss-as-7.1.1.Final.tar.gz \
