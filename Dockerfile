@@ -1,4 +1,4 @@
-FROM authentise/base:6
+FROM ubuntu:14.04
 MAINTAINER Eli Ribble <eli@authentise.com>
 
 # update
@@ -7,9 +7,9 @@ RUN apt-get -y update
 # install utilities
 RUN apt-get -y install wget
 
-# installation : java JDF
-RUN apt-get install -y default-jdk
-ENV JAVA_HOME /usr/lib/jvm/default-java
+# installation : java JDK
+RUN apt-get install -y openjdk-7-jdk
+ENV JAVA_HOME /usr/lib/jvm/java-1.7.0-openjdk-amd64
 
 # install jboss
 RUN wget -O /tmp/jboss-as-7.1.1.Final.tar.gz \
